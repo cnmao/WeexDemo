@@ -82,7 +82,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
 
         if (METHOD_GET.equalsIgnoreCase(request.method)) {
             okHttpRequest = new Request.Builder()
-                    .headers(AddHeaders(request , listener))
+                    .headers(AddHeaders(request, listener))
                     .url(request.url)
                     .get()
                     .build();
@@ -100,7 +100,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
                     .build();
         } else {
             okHttpRequest = new Request.Builder()
-                    .headers(AddHeaders(request ,listener))
+                    .headers(AddHeaders(request, listener))
                     .get()
                     .url(request.url)
                     .build();
@@ -136,7 +136,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
     }
 
 
-    private Headers AddHeaders(WXRequest request ,OnHttpListener listener) {
+    private Headers AddHeaders(WXRequest request, OnHttpListener listener) {
         String url = request.url;
         WeexCacheBean query = query(url);
         HashMap<String, String> map = new HashMap<>();
@@ -196,6 +196,10 @@ public class OkHttpAdapter implements IWXHttpAdapter {
                             //
                             wxResponse.statusCode = "200";
                             wxResponse.originalData = response.body().bytes();
+
+//                            byte[] bytes = response.body().bytes();
+//                            String s1 = new String(bytes);
+
                             String s = response.request().url().toString();
                             WeexCacheBean query = query(s);
                             if (null != query) {
