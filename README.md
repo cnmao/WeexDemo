@@ -65,4 +65,8 @@ Module 与 Component的作用：
          - CLEAN:说明cache已经被成功操作，当前可以被正常读取。每一个CLEAN行还需要记录其每一个value的长度
          - READ: 记录一次cache读取操作
          - REMOVE:记录一次cache清除
+         
+#BUG         
+ViewHolder.itemView' on a null object reference
+
 #END

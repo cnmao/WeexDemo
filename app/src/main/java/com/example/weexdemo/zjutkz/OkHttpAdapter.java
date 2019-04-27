@@ -105,7 +105,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
                     .url(request.url)
                     .build();
         }
-        client.newCall(okHttpRequest).enqueue(CommonCallBack(listener));
+        client.newCall(okHttpRequest).enqueue(CommonCallBack(listener ,request.url));
     }
 
     private boolean requestSuccess(int statusCode) {
@@ -164,7 +164,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
         return builder.build();
     }
 
-    private Callback CommonCallBack(final OnHttpListener listener) {
+    private Callback CommonCallBack(final OnHttpListener listener, final String url) {
         return new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -174,7 +174,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
                     wxResponse.statusCode = String.valueOf(REQUEST_FAILURE);
                     wxResponse.errorMsg = e.getMessage();
                     wxResponse.statusCode = "200";
-                    String s = "http://weex-server.wawscm.com:63808" + "/assets/compiles/index.js";
+                    String s = url;
                     WeexCacheBean query = query(s);
                     if (null != query) {
                         wxResponse.originalData = query.originalData;
