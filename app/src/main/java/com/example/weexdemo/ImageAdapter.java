@@ -19,7 +19,7 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
     @Override
     public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) {
 
-        Glide.with(WXEnvironment.getApplication()).load(url).into(view);
-//        Glide.with(WXEnvironment.getApplication()).load(url).skipMemoryCache(false).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(view);
+//        Glide.with(WXEnvironment.getApplication()).load(url).into(view);
+        Glide.with(WXEnvironment.getApplication()).load(url).skipMemoryCache(false).diskCacheStrategy(DiskCacheStrategy.RESOURCE).onlyRetrieveFromCache(false).into(view);
     }
 }
