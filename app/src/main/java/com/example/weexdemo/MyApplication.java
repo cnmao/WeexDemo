@@ -8,6 +8,7 @@ import com.example.weexdemo.zjutkz.OkHttpAdapter;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
+import com.taobao.weex.http.WXStreamModule;
 
 import org.xutils.DbManager;
 import org.xutils.x;
@@ -33,6 +34,8 @@ public class MyApplication extends Application {
         try {
             WXSDKEngine.registerModule("event", HotelModule.class);//交互用 后面说
             WXSDKEngine.registerComponent("show-web-view", WeexWebView.class);
+            WXSDKEngine.registerModule("stream", WXStreamModule.class);
+
         } catch (WXException e) {
             e.printStackTrace();
         }

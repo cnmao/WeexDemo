@@ -160,9 +160,9 @@ Module 与 Component的作用：
   	 engine.load()
   
    engineJob.addCallback(cb, callbackExecutor); 
-   engineJob.start(decodeJob);
-  	Executors（cb） 遗嘱执行人   cbs.add(cb, callbackExecutor);
-  	callbackExecutor 执行回调
+    engineJob.start(decodeJob);
+  	 Executors（cb） 遗嘱执行人   cbs.add(cb, callbackExecutor);
+  	  callbackExecutor 执行回调
   
   class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback,
       Runnable,
@@ -176,8 +176,27 @@ Module 与 Component的作用：
   	DecodeJob的run方法，会依次从ResourceCacheGenerator->DataCacheGenerator->SourceGenerator这样一个链执行
   	
 
-        
-      
+Retriever 猎犬
+Preconditions 先觉条件
+Transformation 变换
+retrieved  恢复
+
+#WEEX  
+Demo
+    https://github.com/liuzhao2007/WeexList
+源码解析
+    https://www.jianshu.com/p/8e85ef17381f
+    
+        今天看了很多头条祁同伟的文章，受益良多，感触颇深。
+        对框架明了，文章叙述清晰，灿灿到来。
+                                            --记 2019年04月30日
+
+#性能优化
+https://www.jianshu.com/p/7eb182df06d3
+    
+        还没有看完，不过已经被作者震撼到了。
+        官方文档（英文要过关）
+                                             --记 2019年04月30日
 #BUG         
 ViewHolder.itemView' on a null object reference
 

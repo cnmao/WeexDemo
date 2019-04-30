@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.alibaba.fastjson.JSON;
 import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
         initView();
 
+
     }
 
     private void initView() {
@@ -41,6 +43,11 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
             }
         });
+
+        //TODO 序列化与反序列化
+        String text = JSON.toJSONString(""); //序列化
+        Button vo = JSON.parseObject("{}", Button.class); //反序列化
+
     }
 
     //-------------------------------------------------------------------Weex监听回调-----------------------------------------
