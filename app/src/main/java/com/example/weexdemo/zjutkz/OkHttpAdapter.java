@@ -39,9 +39,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
 
     private static final String METHOD_GET = "GET";
     private static final String METHOD_POST = "POST";
-
     public static final int REQUEST_FAILURE = -100;
-
 
     @Override
     public void sendRequest(final WXRequest request, final OnHttpListener listener) {
@@ -49,7 +47,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
             listener.onHttpStart();
         }
 
-        RequestListener requestListener = new RequestListener() {
+        final RequestListener requestListener = new RequestListener() {
             @Override
             public void onRequest(long consumed, long total, boolean done) {
                 if (Assert.checkNull(listener)) {
@@ -105,7 +103,7 @@ public class OkHttpAdapter implements IWXHttpAdapter {
                     .url(request.url)
                     .build();
         }
-        client.newCall(okHttpRequest).enqueue(CommonCallBack(listener ,request.url));
+        client.newCall(okHttpRequest).enqueue(CommonCallBack(listener, request.url));
     }
 
     private boolean requestSuccess(int statusCode) {

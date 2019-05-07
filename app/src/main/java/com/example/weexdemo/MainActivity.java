@@ -7,17 +7,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.alibaba.fastjson.JSON;
 import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
+
 
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
 
     private FrameLayout mContainer;
     private Button bt_reload;
     private WXSDKInstance mWXSDKInstance;
-    private static String weexurl = "http://weex-server.wawscm.com:63808" + "/assets/compiles/index.js";
+        private static String weexurl = "http://weex-server.wawscm.com:63808" + "/assets/compiles/index.js";
+//    private static String weexurl = "http://weex-server.wawscm.com:63808/assets/compiles/product/detail/index.js?productId=442510965771079680&activityType=0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +36,14 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     private void initView() {
         mContainer = findViewById(R.id.container);
         bt_reload = (Button) findViewById(R.id.bt_reload);
-        mWXSDKInstance.renderByUrl("WXSample", weexurl, null, null, WXRenderStrategy.APPEND_ASYNC);
+        mWXSDKInstance.renderByUrl("WXSample", weexurl, null, null, WXRenderStrategy.APPEND_ONCE);
         bt_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mWXSDKInstance.renderByUrl("WXSample", weexurl, null, null, WXRenderStrategy.APPEND_ASYNC);
+                mWXSDKInstance.renderByUrl("WXSample", weexurl, null, null, WXRenderStrategy.APPEND_ONCE);
 
             }
         });
-
-        //TODO 序列化与反序列化
-        String text = JSON.toJSONString(""); //序列化
-        Button vo = JSON.parseObject("{}", Button.class); //反序列化
-
     }
 
     //-------------------------------------------------------------------Weex监听回调-----------------------------------------

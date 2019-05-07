@@ -186,28 +186,72 @@ Demo
     https://github.com/liuzhao2007/WeexList
 源码解析
     https://www.jianshu.com/p/8e85ef17381f
+callbackJavascript  (这个源码解析方式挺好)  
+    https://www.heqiangfly.com/2018/04/10/open-source-weex-android-module-register-callback/
     
         今天看了很多头条祁同伟的文章，受益良多，感触颇深。
         对框架明了，文章叙述清晰，灿灿到来。
                                             --记 2019年04月30日
+
+
+商品详情Url
+http://weex-server.wawscm.com:63808/assets/compiles/product/detail/index.js?productId=442510965771079680&activityType=0
 
 #性能优化
 https://www.jianshu.com/p/7eb182df06d3
     
         还没有看完，不过已经被作者震撼到了。
         官方文档（英文要过关）
-                                             --记 2019年04月30日
-#BUG         
+                                             --记 2019年04月30日 
+
+看了那么多 
+1：没看懂的很多
+2：看懂的没有记住或者是没有尝试
+3：是否需要优化项目（选择商城项目）
+                                            --记 2019年05月05日    
+                                             
+enterspecs
+
+尚德服务器地址
+sp.wawscm.com
+http://hukai.me/blog/categories/android-performance/ 胡凯的博客
+
+#BUG
 ViewHolder.itemView' on a null object reference
 
-okhttp
-glide
+okhttp 2
+glide 3 
+weex
 dagger2
 buttferkenife
-gson
+gson 4 
 view animation
-jni
+jni 
 aidl
-ndk devoloper
+GreenDao
+Rxjava 
+Retrofit2
 
+目标要求：
+weex 可以秒开 也就是一种方案 提前渲染 preRender + relRender    1 
+尚德App性能启动性能问题 
+
+扫码问题
+商城App性能问题
+
+#DOM diff算法
+https://www.infoq.cn/article/react-dom-diff
+其中的挂载 去载 更新顺序
+
+# 监听回调
+基础模板：
+    接口
+    接口实现对象
+    实现对象调用接口
+    
+    定义接口
+    传入对象
+    对象调用
+    
+    
 #END        

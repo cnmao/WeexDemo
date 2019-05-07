@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.weexdemo.callback.CallBackManager;
+
 import org.xutils.ex.DbException;
 
 public class SplashActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     private View viewById;
     private View buttondelete;
     private View glidedemo;
+    private View callbackdemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +65,20 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        callbackdemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CallBackManager.registerModule();
+            }
+        });
     }
 
     private void initView() {
         viewById = findViewById(R.id.button);
         buttondelete = findViewById(R.id.buttondelete);
         glidedemo = findViewById(R.id.glidedemo);
+        callbackdemo = findViewById(R.id.callbackdemo);
     }
 
 

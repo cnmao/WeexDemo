@@ -1,6 +1,8 @@
 package com.example.weexdemo;
 
 import android.app.Application;
+import android.os.Handler;
+import android.os.Message;
 
 import com.example.XUtil;
 import com.example.weexdemo.modle.HotelModule;
@@ -35,7 +37,6 @@ public class MyApplication extends Application {
             WXSDKEngine.registerModule("event", HotelModule.class);//交互用 后面说
             WXSDKEngine.registerComponent("show-web-view", WeexWebView.class);
             WXSDKEngine.registerModule("stream", WXStreamModule.class);
-
         } catch (WXException e) {
             e.printStackTrace();
         }
@@ -54,4 +55,5 @@ public class MyApplication extends Application {
     public DbManager getPersonalDB() {
         return getDbManager();
     }
+
 }
