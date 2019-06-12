@@ -137,7 +137,7 @@ Module 与 Component的作用：
    synchronized void track(@NonNull Target<?> target, @NonNull Request request) {
       targetTracker.track(target);
       requestTracker.runRequest(request);
-    }
+   }
   就是先判断Glide当前是不是处理暂停状态，如果不是暂停状态就调用Request的begin()方法来执行Request，
   				否则的话就先将Request添加到待执行队列里面，等暂停状态解除了之后再执行
   
@@ -182,15 +182,20 @@ Transformation 变换
 retrieved  恢复
 
 #WEEX  
+    使用Vue这个前端框架打出来js文件在boundJs文件夹中
+跨越适配&性能那道坎，企鹅电竞Android weex优化
+https://wetest.qq.com/lab/view/441.html
 Demo
     https://github.com/liuzhao2007/WeexList
 源码解析
     https://www.jianshu.com/p/8e85ef17381f
 callbackJavascript  (这个源码解析方式挺好)  
     https://www.heqiangfly.com/2018/04/10/open-source-weex-android-module-register-callback/
+Weex实战分享|企鹅电竞Weex实践和性能优化   
+        https://juejin.im/entry/5a71b1ae6fb9a01cae0ff527
     
         今天看了很多头条祁同伟的文章，受益良多，感触颇深。
-        对框架明了，文章叙述清晰，灿灿到来。
+        对框架明了，文章叙述清晰，娓娓道来。
                                             --记 2019年04月30日
 
 
@@ -253,5 +258,25 @@ https://www.infoq.cn/article/react-dom-diff
     传入对象
     对象调用
     
+#Http协议 
+持久连接（HTTP persistent connection，也称作HTTP keep-alive或HTTP connection reuse）
+    是使用同一个TCP连接来发送和接收多个HTTP请求/应答，而不是为每一个新的请求/应答打开新的连接的方法。
+RFC-2616
+    https://harttle.land/2014/10/01/http.html#header-5
+keep_alive
+    https://zh.wikipedia.org/wiki/HTTP%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5
+    
+#Animation 
+（可选）取消动画： 取消动画，以防用户突然退出应用程序或视图变为隐身。 ？ 为什么？
+
+    
     
 #END        
+学什么？ 
+不是难题，要基础知识，考试取得分数。
+并不是什么都会了就厉害了？
+1：学习没有止境
+2：一口吃不了胖子
+遇到问题就放弃了？
+刚刚遇到问题就想自暴自弃，想如果都会就好了
+

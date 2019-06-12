@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
     private FrameLayout mContainer;
     private Button bt_reload;
     private WXSDKInstance mWXSDKInstance;
-        private static String weexurl = "http://weex-server.wawscm.com:63808" + "/assets/compiles/index.js";
+    private static String weexurl = "http://weex-server.wawscm.com:63808" + "/assets/compiles/index.js";
 //    private static String weexurl = "http://weex-server.wawscm.com:63808/assets/compiles/product/detail/index.js?productId=442510965771079680&activityType=0";
 
     @Override

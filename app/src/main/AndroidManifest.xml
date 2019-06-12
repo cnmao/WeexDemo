@@ -30,6 +30,13 @@
             android:value="GlideModule" />
 
         <activity android:name=".GlideDemoActivity"></activity>
+        <activity android:name=".WeexModuleActivity"></activity>
+        <activity android:name=".AnimationActivity"></activity>
+        <activity android:name=".CrossfadeActivity"></activity>
+        <activity android:name=".CardFlipActivity"></activity>
+        <activity android:name=".FlingMoveActivity"></activity>
+        <activity android:name=".ZoomActivity"></activity>
+        <activity android:name=".SpringActivity"></activity>
     </application>
 
 </manifest>

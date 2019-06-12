@@ -1,1 +1,1 @@
-include ':app',':sdk'
+include ':app', ':sdk', ':gson', ':okhttp3', ':okhttp-ws'

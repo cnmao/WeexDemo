@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.weexdemo.callback.CallBackManager;
+import com.example.weexdemo.gson.GsonDemo;
+import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xutils.ex.DbException;
 
 public class SplashActivity extends AppCompatActivity {
@@ -18,6 +22,16 @@ public class SplashActivity extends AppCompatActivity {
     private View buttondelete;
     private View glidedemo;
     private View callbackdemo;
+    private View weexmodule;
+    private View animation;
+    private View gson;
+
+    private String jsonStr = "{\n" +
+            "    \"dog\":{\n" +
+            "        \"name\":\"Rufus\",\n" +
+            "        \"age\":\n" +
+            "    }\n" +
+            "}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +86,40 @@ public class SplashActivity extends AppCompatActivity {
                 CallBackManager.registerModule();
             }
         });
+
+        weexmodule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SplashActivity.this, WeexModuleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        gson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    JSONObject jsonObject = new JSONObject(jsonStr);
+                    JSONObject dog = jsonObject.getJSONObject("dog");
+                    String name = dog.getString("age");
+                    Toast.makeText(SplashActivity.this, name, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Gson gson = new Gson();
+                GsonDemo gsonDemo = gson.fromJson(jsonStr, GsonDemo.class);
+                String name = gsonDemo.dog.name;
+                Toast.makeText(SplashActivity.this, name, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        animation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SplashActivity.this, AnimationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
@@ -79,6 +127,9 @@ public class SplashActivity extends AppCompatActivity {
         buttondelete = findViewById(R.id.buttondelete);
         glidedemo = findViewById(R.id.glidedemo);
         callbackdemo = findViewById(R.id.callbackdemo);
+        weexmodule = findViewById(R.id.weexmodule);
+        gson = findViewById(R.id.gson);
+        animation = findViewById(R.id.animation);
     }
 
 
